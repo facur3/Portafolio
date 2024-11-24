@@ -3,7 +3,7 @@
 Proyectos que he tenido dentro y fuera de la facultad
 
 Este repositorio contiene el código fuente de mi portafolio personal, alojado en [GitHub Pages]
-https://facur3.github.io/portafolio/
+https://facur3.github.io/Portafolio/
 
 ## Descripción
 
