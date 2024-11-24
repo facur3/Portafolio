@@ -39,12 +39,15 @@ function typeWriter(element, text, speed = 100) {
 
 const swiper = new Swiper('.mySwiper', {
     centeredSlides: true,
-    slidesPerView: 3,
+    slidesPerView: "auto",
     initialSlide: 1,
     speed: 800,
     grabCursor: true,
     spaceBetween: 150,
     slideToClickedSlide: true,
+    watchOverflow: true,
+    resizeObserver: true,
+    autoHeight: true,
 
     effect: 'coverflow',
     coverflowEffect: {
@@ -70,15 +73,33 @@ const swiper = new Swiper('.mySwiper', {
     breakpoints: {
         320: {
             slidesPerView: 1,
+            spaceBetween: 20,
+            scale: 0.7
+        },
+        480: {
+            slidesPerView: 1,
             spaceBetween: 30,
+            scale: 0.8
         },
         640: {
             slidesPerView: 2,
-            spaceBetween: 100,
+            spaceBetween: 40,
+            scale: 0.85
+        },
+        768: {
+            slidesPerView: 2,
+            spaceBetween: 60,
+            scale: 0.9
         },
         1024: {
             slidesPerView: 3,
+            spaceBetween: 80,
+            scale: 0.95
+        },
+        1400: {
+            slidesPerView: 3,
             spaceBetween: 150,
+            scale: 1
         }
     }
 });
