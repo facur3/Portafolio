@@ -16,57 +16,105 @@
 </head>
 <body>
     <div class="page-wrapper">
-        <!-- Navigation Buttons -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-
         <div class="container">
-            <img src="./pics/bana.jpg" alt="Foto de perfil" class="profile-img hidden">
-            <h1 class="title hidden">Facundo Rossi</h1>
-            <p class="description hidden">Estudiante de Licenciatura en Análisis de Sistemas. Facultad de Ingeniería (UBA).</p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/facu-rossi-a5839a278/" target="_blank" rel="noopener noreferrer" class="hidden">
+            <!-- Profile Section -->
+            <section class="profile-section">
+                <img src="./pics/bana.jpg" alt="Foto de perfil" class="profile-img hidden">
+                <h1 class="title hidden">Facundo Rossi</h1>
+                <p class="description hidden">Estudiante de Licenciatura en Análisis de Sistemas. Facultad de Ingeniería (UBA).</p>
+            </section>
+
+            <!-- Social Links -->
+            <section class="social-links hidden">
+                <a href="https://www.linkedin.com/in/facu-rossi-a5839a278/" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-linkedin"></i> LinkedIn
                 </a>
-                <a href="https://github.com/facur3" target="_blank" rel="noopener noreferrer" class="hidden">
+                <a href="https://github.com/facur3" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-github"></i> GitHub
                 </a>
-                <a href="mailto:facurossi33@gmail.com" class="hidden">
+                <a href="mailto:facurossi33@gmail.com">
                     <i class="fas fa-envelope"></i> Email
                 </a>
-            </div>
+            </section>
 
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="card-item">
-                            <img src="./pics/elegante.jpg" alt="Imagen del Proyecto 1" class="project-img">
-                            <h2 class="project-name">Primera pagina web</h2>
-                            <p class="descripcion">Una página web de mala calidad tiene diseño desordenado, navegación confusa, contenido mal redactado, carga lenta, no es responsiva</p>
-                            <a href="https://facur3.github.io/PFRossi/" class="ver-button" target="_blank" rel="noopener noreferrer">Ver</a>
+            <!-- Projects Slider -->
+            <section class="projects-slider">
+                <div class="swiper mySwiper">
+                    <!-- Navigation Buttons Moved Inside -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    
+                    <div class="swiper-wrapper">
+                        <!-- Project 1 -->
+                        <div class="swiper-slide">
+                            <div class="card-item">
+                                <img src="./pics/elegante.jpg" alt="Imagen del Proyecto 1" class="project-img">
+                                <h2 class="project-name">Primera página web</h2>
+                                <p class="descripcion">Una página web de mala calidad tiene diseño desordenado, navegación confusa, contenido mal redactado, carga lenta, no es responsiva.</p>
+                                <a href="https://facur3.github.io/PFRossi/" class="ver-button" target="_blank" rel="noopener noreferrer">Ver</a>
+                            </div>
+                        </div>
+
+                        <!-- Project 2 -->
+                        <div class="swiper-slide">
+                            <div class="card-item">
+                                <img src="./pics/fifteen.jpg" alt="Imagen del Proyecto 2" class="project-img">
+                                <h2 class="project-name">Fifteen</h2>
+                                <p class="descripcion">Pequeño juego de matrices en el cmd como parte de un t.p de la facultad.</p>
+                                <a href="https://facur3.github.io/Fifteen/" class="ver-button" target="_blank" rel="noopener noreferrer">Ver</a>
+                            </div>
+                        </div>
+
+                        <!-- Project 3 -->
+                        <div class="swiper-slide">
+                            <div class="card-item">
+                                <img src="./pics/plagios.jpg" alt="Imagen del Proyecto 3" class="project-img">
+                                <h2 class="project-name">Plagio</h2>
+                                <p class="descripcion">Detección de plagios en un texto, trabajo hecho como parte de un t.p para la facultad.</p>
+                                <a href="https://github.com/facur3/plagios" class="ver-button" target="_blank" rel="noopener noreferrer">Ver</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="card-item">
-                            <img src="./pics/fifteen.jpg" alt="Imagen del Proyecto 2" class="project-img">
-                            <h2 class="project-name">Fifteen</h2>
-                            <p class="descripcion">Pequeño juego de matrices en el cmd como parte de un t.p de la facultad</p>
-                            <a href="https://facur3.github.io/Fifteen/" class="ver-button" target="_blank" rel="noopener noreferrer">Ver</a>
-                        </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section class="skills-container hidden">
+                <h2 class="skills-title">Skills</h2>
+                <div class="skill-item hidden" data-percentage="90">
+                    <div class="skill-info">
+                        <span>Python</span>
+                        <span class="percent">90%</span>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="card-item">
-                            <img src="./pics/plagios.jpg" alt="Imagen del Proyecto 3" class="project-img">
-                            <h2 class="project-name">Plagio</h2>
-                            <p class="descripcion">Deteccion de plagios en un texto, trabajo hecho como parte de un t.p para la facultad</p>
-                            <a href="https://github.com/facur3/plagios" class="ver-button" target="_blank" rel="noopener noreferrer">Ver</a>
-                        </div>
+                    <div class="progress-bar">
+                        <div class="progress python-gradient"></div>
                     </div>
                 </div>
-                <div class="swiper-pagination"></div>
-            </div>
+                
+                <div class="skill-item hidden" data-percentage="85">
+                    <div class="skill-info">
+                        <span>Go</span>
+                        <span class="percent">85%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress go-gradient"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item hidden" data-percentage="80">
+                    <div class="skill-info">
+                        <span>JavaScript</span>
+                        <span class="percent">80%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress js-gradient"></div>
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./script.js"></script>
 </body>

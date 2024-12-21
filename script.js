@@ -1,26 +1,32 @@
-// script.js
 document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('show');
+                entry.target.style.visibility = 'visible';
+                if (entry.target.classList.contains('skill-item')) {
+                    const percentage = entry.target.dataset.percentage;
+                    const progress = entry.target.querySelector('.progress');
+                    progress.style.setProperty('--progress-width', `${percentage}%`);
+                    progress.style.animation = 'progress 1s ease-out forwards';
+                }
             }
         });
+    }, {
+        threshold: 0.5, // Trigger when half visible
+        rootMargin: '-10% 0px' // Trigger near center
     });
 
+    // Observe elements
     const hiddenElements = document.querySelectorAll('.hidden');
-    hiddenElements.forEach((el) => observer.observe(el));
+    hiddenElements.forEach(el => observer.observe(el));
 
-    const socialLinks = document.querySelectorAll('.social-links a');
-    socialLinks.forEach((link, index) => {
-        link.style.transitionDelay = `${index * 0.2}s`;
+    // Initialize progress bars
+    document.querySelectorAll('.skill-item').forEach(item => {
+        const percentage = item.dataset.percentage;
+        const progressBar = item.querySelector('.progress');
+        progressBar.style.setProperty('--progress-width', `${percentage}%`);
     });
-
-    const title = document.querySelector('.title');
-    const originalText = title.textContent;
-    setTimeout(() => {
-        typeWriter(title, originalText);
-    }, 1000);
 });
 
 function typeWriter(element, text, speed = 100) {
@@ -37,6 +43,7 @@ function typeWriter(element, text, speed = 100) {
     type();
 }
 
+// Swiper initialization
 const swiper = new Swiper('.mySwiper', {
     centeredSlides: true,
     slidesPerView: "auto",
@@ -45,10 +52,6 @@ const swiper = new Swiper('.mySwiper', {
     grabCursor: true,
     spaceBetween: 150,
     slideToClickedSlide: true,
-    watchOverflow: true,
-    resizeObserver: true,
-    autoHeight: true,
-
     effect: 'coverflow',
     coverflowEffect: {
         rotate: 0,
@@ -58,48 +61,42 @@ const swiper = new Swiper('.mySwiper', {
         scale: 0.85,
         slideShadows: false,
     },
-
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
         dynamicBullets: true,
     },
-
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
-
     breakpoints: {
         320: {
             slidesPerView: 1,
-            spaceBetween: 20,
-            scale: 0.7
-        },
-        480: {
-            slidesPerView: 1,
-            spaceBetween: 30,
-            scale: 0.8
+            spaceBetween: 20
         },
         640: {
             slidesPerView: 2,
-            spaceBetween: 40,
-            scale: 0.85
-        },
-        768: {
-            slidesPerView: 2,
-            spaceBetween: 60,
-            scale: 0.9
+            spaceBetween: 40
         },
         1024: {
             slidesPerView: 3,
-            spaceBetween: 80,
-            scale: 0.95
-        },
-        1400: {
-            slidesPerView: 3,
-            spaceBetween: 150,
-            scale: 1
+            spaceBetween: 80
         }
     }
 });
+
+// CSS classes for hidden and show states
+const style = document.createElement('style');
+style.innerHTML = `
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+`;
+document.head.appendChild(style);

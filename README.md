@@ -1,23 +1,22 @@
+## Portafolio
 
-# Portafolio
-Proyectos que he tenido dentro y fuera de la facultad
+Este portafolio presenta mis proyectos destacados y enlaces de contacto.
 
-Este repositorio contiene el código fuente de mi portafolio personal, alojado en [GitHub Pages]
 https://facur3.github.io/Portafolio/
 
-## Descripción
+### Mejoras incluidas
+- Modo claro/oscuro.
+- Formulario de contacto funcional.
+- Animaciones y mejoras en la UX/UI.
 
-Mi portafolio presenta:
-- Proyectos destacados.
-- Información personal y profesional.
-- Contacto y enlaces a redes sociales.
+### Tecnologías utilizadas
+- **HTML5**
+- **CSS3**
+- **JavaScript**
+- **SwiperJS**
 
-## Tecnologías utilizadas
-
-- **HTML5**: Estructura del contenido.
-- **CSS3**: Estilos y diseño responsivo.
-- **JavaScript**: Funcionalidades dinámicas (si aplica).
-- **SASS**
-- **Python**
-- **C**
-
+### Contribuir
+1. Haz un fork.
+2. Crea un branch: `git checkout -b feature/nueva-mejora`.
+3. Realiza tus cambios y súbelos.
+4. Abre un pull request.
