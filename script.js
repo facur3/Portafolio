@@ -7,14 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (entry.target.classList.contains('skill-item')) {
                     const percentage = entry.target.dataset.percentage;
                     const progress = entry.target.querySelector('.progress');
-                    progress.style.setProperty('--progress-width', `${percentage}%`);
-                    progress.style.animation = 'progress 1s ease-out forwards';
+                    progress.style.width = `${percentage}%`;
                 }
             }
         });
     }, {
-        threshold: 0.5, // Trigger when half visible
-        rootMargin: '-10% 0px' // Trigger near center
+        threshold: 0.5,
+        rootMargin: '-10% 0px'
     });
 
     // Observe elements
@@ -26,23 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const percentage = item.dataset.percentage;
         const progressBar = item.querySelector('.progress');
         progressBar.style.setProperty('--progress-width', `${percentage}%`);
-    });
-});
-
-document.querySelectorAll('.card-item').forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
-        const rotateX = (y - rect.height / 2) / 10;
-        const rotateY = (x - rect.width / 2) / 10;
-        
-        card.style.transform = `perspective(1000px) rotateX(${-rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
-    });
-    
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
     });
 });
 

@@ -256,19 +256,33 @@ p {
     box-shadow: 0 0 15px rgba(247, 223, 30, 0.5);
 }
 
-.skills-container {
-    transform: translateY(50px);
-    opacity: 0;
-    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
-    min-height: 50vh; /* Reduced from 100vh */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 50vh 0; /* Reduced from 100vh */
-    padding: 2rem;
-    visibility: hidden;
+.html-gradient {
+    background: linear-gradient(90deg, #ebae05 0%, #ce7d13 100%);
+    box-shadow: 0 0 15px rgba(236, 201, 2, 0.452);
 }
 
+.css-gradient {
+    background: linear-gradient(90deg, #0842e4 0%, #0b228b 100%);
+    box-shadow: 0 0 15px rgba(26, 141, 150, 0.5);
+}
+
+.skills-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    padding: 2.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.skills-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
 
 .skills-container.show {
     transform: translateY(0);
@@ -277,16 +291,22 @@ p {
 
 .skills-title {
     color: var(--github-accent);
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     margin-bottom: 2rem;
-    text-align: left;
+    text-align: center;
+    font-weight: 600;
 }
 
 .skill-item {
-    opacity: 0;
-    transform: translateY(100px);
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    visibility: hidden;
+    padding: 1rem;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.02);
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.04);
 }
 
 .skill-item.show {
@@ -297,22 +317,43 @@ p {
 .skill-info {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 0.5rem;
-    color: var(--github-text);
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.skill-info span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     font-size: 1rem;
+    font-weight: 500;
+}
+
+.skill-info i {
+    font-size: 1.2rem;
+}
+
+.skills-title {
+    font-size: 2rem;
+    background: linear-gradient(90deg, var(--github-accent), #58a6ff80);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin-bottom: 1.5rem;
 }
 
 .progress-bar {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    height: 10px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+    overflow: hidden;
 }
 
 .progress {
     height: 100%;
     border-radius: 4px;
     transform-origin: left;
+    transform: scaleX(0);
     transition: transform 1.2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
 }
 
@@ -330,13 +371,13 @@ p {
 
 .skill-item.show .progress {
     transform: scaleX(1);
-    width: var(--progress-width);
 }
 
 .projects-slider {
-    margin-bottom: 50vh; /* Reduced from 100vh */
-    position: relative; /* Add this */
+    margin-bottom: 4rem; /* Reduced margin */
+    position: relative;
 }
+
 
 @keyframes progress {
     from {
