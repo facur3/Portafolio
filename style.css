@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap');
 
+:root {
+    --github-dark: #0d1117;
+    --github-text: #c9d1d9;
+    --github-accent: #58a6ff;
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.05);
+    --glass-shadow: rgba(0, 0, 0, 0.2);
+    --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,17 +17,67 @@
     font-family: "Kanit", sans-serif;
 }
 
-:root {
-    --github-dark: #0d1117;
-    --github-text: #c9d1d9;
-    --github-accent: #58a6ff;
-}
-
 body {
-    background-color: var(--github-dark);
+    background: linear-gradient(135deg, var(--github-dark) 0%, #151b24 100%);
     color: var(--github-text);
     min-height: 100vh;
     overflow-x: hidden;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(13, 17, 23, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--glass-border);
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.nav-container {
+    width: min(95%, 1400px);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    color: var(--github-accent);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--github-text);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--github-accent);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
 }
 
 .page-wrapper {
@@ -27,25 +87,41 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: clamp(1rem, 3vh, 2rem) 0;
-    overflow: visible;
+    padding: calc(80px + clamp(1rem, 3vh, 2rem)) 0 clamp(1rem, 3vh, 2rem); /* Ajustado */
 }
 
 .container {
     position: relative;
     width: min(95%, 1400px);
     margin: 0 auto;
-    padding: 0;
+    padding: 2rem;
     text-align: center;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--card-shadow);
+}
+
+.profile-section {
+    margin-top: clamp(1rem, 4vh, 2rem);
+    padding-top: clamp(1rem, 3vh, 2rem);
 }
 
 .profile-img {
     width: clamp(100px, 15vh, 150px);
     height: clamp(100px, 15vh, 150px);
     border-radius: 50%;
-    margin-bottom: clamp(0.5rem, 2vh, 1rem);
+    margin: 0 auto clamp(0.5rem, 2vh, 1rem);
     border: 3px solid var(--github-accent);
     padding: 3px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: block; /* Asegura que la imagen se centre correctamente */
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--github-accent);
 }
 
 h1 {
@@ -64,7 +140,7 @@ p {
     display: flex;
     justify-content: center;
     gap: clamp(0.5rem, 1.5vw, 1rem);
-    margin-top: clamp(1rem, 3vh, 2rem);
+    margin: clamp(1rem, 3vh, 2rem) 0;
 }
 
 .social-links a {
@@ -72,20 +148,20 @@ p {
     text-decoration: none;
     padding: clamp(0.5rem, 1.5vh, 0.8rem) clamp(1rem, 2vw, 1.5rem);
     border: 1px solid var(--github-text);
-    border-radius: 6px;
-    transition: all 0.3s ease !important;
+    border-radius: 12px;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    font-size: clamp(0.9rem, 1.8vh, 1.1rem);
 }
 
 .social-links a:hover {
-    background-color: var(--github-accent);
+    background: var(--github-accent);
     border-color: var(--github-accent);
     color: var(--github-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(88, 166, 255, 0.4);
 }
 
 .mySwiper {
@@ -206,11 +282,11 @@ p {
 }
 
 .swiper-button-next {
-    right: -60px; /* Position outside container */
+    right: -20px; /* Changed from -60px */
 }
 
 .swiper-button-prev {
-    left: -60px; /* Position outside container */
+    left: -20px; /* Changed from -60px */
 }
 
 .swiper-button-next:after,
@@ -269,13 +345,16 @@ p {
 .skills-container {
     width: 100%;
     max-width: 800px;
-    margin: 0 auto 3rem;
+    margin: 3rem auto;
     padding: 2.5rem;
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--glass-bg);
     border-radius: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
     backdrop-filter: blur(12px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--card-shadow);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .skills-grid {
@@ -298,15 +377,17 @@ p {
 }
 
 .skill-item {
-    padding: 1rem;
+    padding: 1.5rem;
     border-radius: 16px;
     background: rgba(255, 255, 255, 0.02);
-    transition: all 0.3s ease;
+    border: 1px solid var(--glass-border);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .skill-item:hover {
-    transform: translateY(-2px);
+    transform: translateY(-5px);
     background: rgba(255, 255, 255, 0.04);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .skill-item.show {
@@ -337,29 +418,43 @@ p {
     font-size: 2rem;
     background: linear-gradient(90deg, var(--github-accent), #58a6ff80);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: center;
     margin-bottom: 1.5rem;
 }
 
 .progress-bar {
-    height: 8px;
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 4px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
     overflow: hidden;
+    position: relative;
 }
 
 .progress {
     height: 100%;
-    border-radius: 4px;
+    border-radius: 10px;
     transform-origin: left;
     transform: scaleX(0);
     transition: transform 1.2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
 }
 
+.progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.2));
+    transform: skewX(-20deg);
+}
+
 .hidden {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(20px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     visibility: hidden;
 }
 
@@ -378,6 +473,64 @@ p {
     position: relative;
 }
 
+.footer {
+    background: rgba(13, 17, 23, 0.95);
+    border-top: 1px solid var(--glass-border);
+    padding: 4rem 0 2rem;
+    margin-top: 4rem;
+}
+
+.footer-container {
+    width: min(95%, 1400px);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    padding: 0 2rem;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-section h3 {
+    color: var(--github-accent);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.footer-section a, .footer-section p {
+    color: var(--github-text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: var(--github-accent);
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons a {
+    font-size: 1.5rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--glass-border);
+}
+
+.footer-bottom p {
+    color: #8b949e;
+    font-size: 0.9rem;
+}
 
 @keyframes progress {
     from {
@@ -426,6 +579,33 @@ p {
 
     .ver-button {
         padding: clamp(6px, 1.2vh, 10px) clamp(20px, 3vw, 30px);
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+    
+    .container {
+        padding: 1rem;
+    }
+    
+    .skills-container {
+        padding: 1.5rem;
+    }
+    
+    .skill-item {
+        padding: 1rem;
     }
 }
 

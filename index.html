@@ -16,6 +16,18 @@
     <link rel="manifest" href="/site.webmanifest" />
 </head>
 <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">FR</a>
+            <div class="nav-links">
+                <a href="#about">Sobre mí</a>
+                <a href="#projects">Proyectos</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contacto</a>
+            </div>
+        </div>
+    </nav>
     <div class="page-wrapper">
         <div class="container">
             <!-- Profile Section -->
@@ -139,5 +151,51 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./script.js"></script>
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Contacto</h3>
+            <p>Buenos Aires, Argentina</p>
+            <p>facurossi33@gmail.com</p>
+        </div>
+        <div class="footer-section">
+            <h3>Redes Sociales</h3>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/facu-rossi-a5839a278/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/facur3" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <div class="footer-section">
+            <h3>Enlaces Rápidos</h3>
+            <a href="#about">Sobre mí</a>
+            <a href="#projects">Proyectos</a>
+            <a href="#skills">Skills</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Facundo Rossi. Todos los derechos reservados.</p>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+<script>
+    // Inicialización de Lenis para scroll suave
+    const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        direction: 'vertical',
+        gestureDirection: 'vertical',
+        smooth: true,
+        smoothTouch: false,
+        touchMultiplier: 2
+    });
+
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+</script>
 </body>
 </html>
