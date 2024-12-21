@@ -4,11 +4,6 @@ Este portafolio presenta mis proyectos destacados y enlaces de contacto.
 
 https://facur3.github.io/Portafolio/
 
-### Mejoras incluidas
-- Modo claro/oscuro.
-- Formulario de contacto funcional.
-- Animaciones y mejoras en la UX/UI.
-
 ### Tecnologías utilizadas
 - **HTML5**
 - **CSS3**
