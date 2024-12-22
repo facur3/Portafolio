@@ -85,6 +85,16 @@ const swiper = new Swiper('.mySwiper', {
     }
 });
 
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+});
+
+
+
+
 // CSS classes for hidden and show states
 const style = document.createElement('style');
 style.innerHTML = `

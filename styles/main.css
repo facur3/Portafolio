@@ -24,6 +24,12 @@ body {
     overflow-x: hidden;
 }
 
+p {
+    margin-bottom: clamp(1.2rem, 3vh, 2rem);
+    line-height: 1.7;
+    font-size: clamp(1rem, 2.2vh, 1.2rem);
+}
+
 .navbar {
     position: fixed;
     top: 0;
@@ -80,6 +86,21 @@ body {
     width: 100%;
 }
 
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+  .hamburger span {
+    height: 3px;
+    width: 25px;
+    background: var(--github-text);
+    border-radius: 2px;
+  }
+
 .page-wrapper {
     position: relative;
     width: 100%;
@@ -91,9 +112,8 @@ body {
 }
 
 .container {
-    position: relative;
-    width: min(95%, 1400px);
-    margin: 0 auto;
+    width: min(90%, 1200px);
+    margin: 2rem auto;
     padding: 2rem;
     text-align: center;
     background: var(--glass-bg);
@@ -102,6 +122,7 @@ body {
     backdrop-filter: blur(10px);
     box-shadow: var(--card-shadow);
 }
+
 
 .profile-section {
     margin-top: clamp(1rem, 4vh, 2rem);
@@ -466,6 +487,7 @@ p {
 
 .skill-item.show .progress {
     transform: scaleX(1);
+    transition: transform 1s ease;
 }
 
 .projects-slider {
@@ -583,6 +605,31 @@ p {
 }
 
 @media (max-width: 768px) {
+
+    .hamburger {
+        display: flex;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: rgba(13, 17, 23, 0.95);
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 200px;
+        padding: 1rem;
+        border-radius: 0 0 0 10px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+      .navbar {
+        padding: 0.5rem 0;
+      }
+      .page-wrapper {
+        padding-top: 120px;
+      }
     .nav-links {
         display: none;
     }
@@ -633,3 +680,10 @@ p {
         font-size: clamp(0.8rem, 1.8vh, 1rem);
     }
 }
+
+
+@media (max-width: 480px) {
+    .swiper-slide {
+      width: 80% !important;
+    }
+  }
