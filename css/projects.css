@@ -1,0 +1,162 @@
+.mySwiper {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: clamp(20px, 4vh, 40px) auto;
+    padding: clamp(10px, 2vh, 20px) 60px; /* Add horizontal padding */
+    overflow: visible;
+}
+
+.swiper-slide {
+    width: clamp(280px, 40vw, 350px);
+    height: auto;
+    opacity: 0.4;
+    transform: scale(0.8);
+    transition: all 0.3s ease;
+}
+
+.swiper-slide-active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 2;
+}
+
+.swiper-slide-prev,
+.swiper-slide-next {
+    opacity: 0.6;
+    transform: scale(0.85);
+}
+
+.card-item {
+    position: relative;
+    color: var(--github-text);
+    width: 100%;
+    min-height: clamp(300px, 50vh, 500px);
+    padding: clamp(15px, 2vh, 30px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    transform-origin: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.project-img {
+    width: 100%;
+    height: clamp(120px, 20vh, 200px);
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: clamp(15px, 3vh, 25px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease;
+}
+
+.card-item:hover .project-img {
+    transform: scale(1.05);
+  }
+
+.project-name {
+    font-size: clamp(1.4rem, 3vh, 1.8rem);
+    font-weight: 600;
+    margin-bottom: clamp(10px, 2vh, 15px);
+    color: var(--github-accent);
+}
+
+.descripcion {
+    font-size: clamp(0.9rem, 2vh, 1.1rem);
+    line-height: 1.6;
+    color: var(--github-text);
+    margin: clamp(10px, 2vh, 15px) 0 clamp(15px, 3vh, 25px);
+    text-align: center;
+}
+
+.ver-button {
+    position: relative;
+    padding: clamp(8px, 1.5vh, 12px) clamp(25px, 4vw, 35px);
+    font-size: clamp(0.9rem, 2vh, 1.1rem);
+    font-weight: 500;
+    color: var(--github-accent);
+    background: transparent;
+    border: 2px solid var(--github-accent);
+    border-radius: 8px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.ver-button:hover {
+    background: var(--github-accent);
+    color: var(--github-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(88, 166, 255, 0.3);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    position: absolute; /* Changed from fixed */
+    top: 50%;
+    width: clamp(40px, 5vw, 50px) !important;
+    height: clamp(40px, 5vw, 50px) !important;
+    color: var(--github-text);
+    background: transparent;
+    border: 2px solid var(--github-text);
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.swiper-button-next {
+    right: 20px;
+}
+
+.swiper-button-prev {
+    left: 20px;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: clamp(16px, 2.5vw, 20px) !important;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background: var(--github-accent);
+    border-color: var(--github-accent);
+    color: var(--github-dark);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.swiper-pagination {
+    bottom: clamp(-15px, -2vh, -10px) !important;
+}
+
+.swiper-pagination-bullet {
+    background: var(--github-text);
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--github-accent);
+    opacity: 1;
+}
+
+.projects-slider {
+    margin-bottom: 4rem; /* Reduced margin */
+    position: relative;
+}

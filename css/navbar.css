@@ -1,0 +1,161 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(13, 17, 23, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--glass-border);
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.nav-container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.nav-logo {
+    color: var(--github-accent);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    z-index: 1001;
+    margin-right: auto;
+}
+
+.nav-logo:hover {
+    color: var(--github-text);
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 12px;
+    background: transparent;
+    border: none;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: var(--github-accent) !important;
+    transition: var(--transition-smooth);
+}
+
+.hamburger:hover span {
+    background-color: var(--github-text) !important;
+}
+
+.hamburger.active span {
+    background-color: var(--hamburger-active) !important;
+}
+
+.nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 100%;
+    background: rgba(13, 17, 23, 0.98);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    transition: right 0.3s ease-in-out;
+}
+
+.nav-links.active {
+    right: 0;
+}
+
+.nav-links a {
+    color: var(--github-text);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.2rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--github-accent);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .hamburger span {
+        background-color: var(--github-accent) !important;
+    }
+
+    .hamburger.active span {
+        background-color: var(--github-accent) !important;
+    }
+
+    .hamburger:hover span {
+        background-color: var(--github-text) !important;
+    }
+}
+
+/* Desktop styles */
+@media screen and (min-width: 769px) {
+    .hamburger {
+        display: none;
+    }
+
+    .nav-links {
+        position: static;
+        height: auto;
+        width: auto;
+        background: none;
+        flex-direction: row;
+        right: 0;
+        margin-left: auto; /* Push nav-links to right */
+        gap: 2rem; /* Space between nav items */
+    }
+
+    .nav-container {
+        gap: 2rem; /* Space between logo and nav-links */
+    }
+}
+
+/* Tablet styles */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .nav-links a {
+        font-size: 1.1rem;
+    }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 480px) {
+    .nav-container {
+        padding: 0 0.5rem;
+    }
+
+    .nav-logo {
+        font-size: 1.2rem;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+    }
+}

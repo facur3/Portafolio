@@ -4,18 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Presentación</title>
+
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- External CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="./pics/favicon-96x96.png" sizes="96x96" type="image/png">
-    <link rel="apple-touch-icon" sizes="180x180" href="./pics/apple-touch-icon.png">
-    <link rel="icon" type="image/svg+xml" href="./pics/favicon.svg" />
-    <meta name="apple-mobile-web-app-title" content="MyWebSite" />
-    <link rel="shortcut icon" href="./pics/favicon.ico" />
-    <link rel="manifest" href="/site.webmanifest" />
+    
+    <!-- Internal CSS -->
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/scroll.css">
+    <link rel="stylesheet" href="./css/profile.css">
+    <link rel="stylesheet" href="./css/social_links.css">
+    <link rel="stylesheet" href="./css/projects.css">
+    <link rel="stylesheet" href="./css/skills.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/main.css">
+    
+    <!-- Favicons -->
+    <link rel="icon" href="./assets/icons/favicon-96x96.png" sizes="96x96" type="image/png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="./assets/icons/favicon.svg">
+    <meta name="apple-mobile-web-app-title" content="MyWebSite">
+    <link rel="shortcut icon" href="./assets/icons/favicon.ico">
+    <link rel="manifest" href="./site.webmanifest/site.webmanifest">
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress"></div>
+    </div>
+    
     <!-- Navbar -->
     <nav class="navbar">
         <div class="nav-container">
@@ -32,12 +57,12 @@
                 <a href="#contact">Contacto</a>
             </div>
         </div>
-      </nav>
+    </nav>
     <div class="page-wrapper">
         <div class="container">
             <!-- Profile Section -->
             <section class="profile-section">
-                <img src="./pics/bana.jpg" alt="Foto de perfil" class="profile-img hidden">
+                <img src="./assets/images/bana.jpg" alt="Foto de perfil" class="profile-img hidden">
                 <h1 class="title hidden">Facundo Rossi</h1>
                 <p class="description hidden">Estudiante de Licenciatura en Análisis de Sistemas. Facultad de Ingeniería (UBA).</p>
             </section>
@@ -65,7 +90,7 @@
                         <!-- Project 1 -->
                         <div class="swiper-slide">
                             <div class="card-item">
-                                <img src="./pics/elegante.jpg" alt="Imagen del Proyecto 1" class="project-img">
+                                <img src="./assets/images/elegante.jpg" alt="Imagen del Proyecto 1" class="project-img">
                                 <h2 class="project-name">Primera página web</h2>
                                 <p class="descripcion">Una página web de mala calidad tiene diseño desordenado, navegación confusa, contenido mal redactado, carga lenta, no es responsiva.</p>
                                 <a href="https://facur3.github.io/PFRossi/" class="ver-button" target="_blank" rel="noopener noreferrer">Ver</a>
@@ -75,7 +100,7 @@
                         <!-- Project 2 -->
                         <div class="swiper-slide">
                             <div class="card-item">
-                                <img src="./pics/fifteen.jpg" alt="Imagen del Proyecto 2" class="project-img">
+                                <img src="./assets/images/fifteen.jpg" alt="Imagen del Proyecto 2" class="project-img">
                                 <h2 class="project-name">Fifteen</h2>
                                 <p class="descripcion">Pequeño juego de matrices en el cmd como parte de un t.p de la facultad.</p>
                                 <a href="https://facur3.github.io/Fifteen/" class="ver-button" target="_blank" rel="noopener noreferrer">Ver</a>
@@ -85,7 +110,7 @@
                         <!-- Project 3 -->
                         <div class="swiper-slide">
                             <div class="card-item">
-                                <img src="./pics/plagios.jpg" alt="Imagen del Proyecto 3" class="project-img">
+                                <img src="./assets/images/plagios.jpg" alt="Imagen del Proyecto 3" class="project-img">
                                 <h2 class="project-name">Plagio</h2>
                                 <p class="descripcion">Detección de plagios en un texto, trabajo hecho como parte de un t.p para la facultad.</p>
                                 <a href="https://github.com/facur3/plagios" class="ver-button" target="_blank" rel="noopener noreferrer">Ver</a>
@@ -130,6 +155,16 @@
                         </div>
                     </div>
 
+                    <div class="skill-item hidden" data-percentage="50">
+                        <div class="skill-info">
+                            <span><i class="fab fa-cuttlefish"></i> C</span>
+                            <span class="percent">50%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress c-gradient"></div>
+                        </div>
+                    </div>
+
                     <div class="skill-item hidden" data-percentage="40">
                         <div class="skill-info">
                             <span><i class="fab fa-golang"></i> Go</span>
@@ -154,8 +189,6 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="./script.js"></script>
 <!-- Footer -->
 <footer class="footer">
     <div class="footer-container">
@@ -182,25 +215,17 @@
         <p>&copy; 2024 Facundo Rossi. Todos los derechos reservados.</p>
     </div>
 </footer>
-<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
-<script>
-    // Inicialización de Lenis para scroll suave
-    const lenis = new Lenis({
-        duration: 1.2,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        direction: 'vertical',
-        gestureDirection: 'vertical',
-        smooth: true,
-        smoothTouch: false,
-        touchMultiplier: 2
-    });
 
-    function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-</script>
+    <!-- External JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    
+    <!-- Internal JS -->
+    <script src="./js/hamburger.js"></script>
+    <script src="./js/lenis-init.js"></script>
+    <script src="./js/observer.js"></script>
+    <script src="./js/swiper-init.js"></script>
+    <script src="./js/scroll.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>

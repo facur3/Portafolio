@@ -1,0 +1,166 @@
+.python-gradient {
+    background: linear-gradient(90deg, #4B8BBE 0%, #306998 100%);
+    box-shadow: 0 0 15px rgba(75, 139, 190, 0.5);
+}
+
+.c-gradient{
+    background: linear-gradient(90deg, #6f93bd 0%, #727C8E 100%);
+    box-shadow: 0 0 15px rgba(168, 185, 204, 0.5);
+}
+
+.go-gradient {
+    background: linear-gradient(90deg, #00ADD8 0%, #29BEB0 100%);
+    box-shadow: 0 0 15px rgba(0, 173, 216, 0.5);
+}
+
+.js-gradient {
+    background: linear-gradient(90deg, #F7DF1E 0%, #E8C012 100%);
+    box-shadow: 0 0 15px rgba(247, 223, 30, 0.5);
+}
+
+.html-gradient {
+    background: linear-gradient(90deg, #ebae05 0%, #ce7d13 100%);
+    box-shadow: 0 0 15px rgba(236, 201, 2, 0.452);
+}
+
+.css-gradient {
+    background: linear-gradient(90deg, #0842e4 0%, #0b228b 100%);
+    box-shadow: 0 0 15px rgba(26, 141, 150, 0.5);
+}
+
+.skills-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2.5rem;
+    background: var(--glass-bg);
+    border-radius: 24px;
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    box-shadow: var(--card-shadow);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+  
+.skills-container.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.skills-title {
+    color: var(--github-accent);
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.skill-item {
+    padding: 1.5rem;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--glass-border);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.skill-item.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.skill-info span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.skill-info i {
+    font-size: 1.2rem;
+}
+
+.skills-title {
+    font-size: 2rem;
+    background: linear-gradient(90deg, var(--github-accent), #58a6ff80);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.progress-bar {
+    height: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress {
+    height: 100%;
+    border-radius: 10px;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 1.2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+
+.progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.2));
+    transform: skewX(-20deg);
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    visibility: hidden;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.skill-item.show .progress {
+    transform: scaleX(1);
+    transition: transform 1s ease;
+}
+
+@media (max-width: 480px) {
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .skill-item {
+      padding: 1rem;
+    }
+  }

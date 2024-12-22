@@ -1,0 +1,20 @@
+.profile-section {
+    margin-top: clamp(1rem, 4vh, 2rem);
+    padding-top: clamp(1rem, 3vh, 2rem);
+}
+
+.profile-img {
+    width: clamp(100px, 15vh, 150px);
+    height: clamp(100px, 15vh, 150px);
+    border-radius: 50%;
+    margin: 0 auto clamp(0.5rem, 2vh, 1rem);
+    border: 3px solid var(--github-accent);
+    padding: 3px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: block; /* Asegura que la imagen se centre correctamente */
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--github-accent);
+}

@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --github-dark: #0d1117;
+    --github-text: #c9d1d9;
+    --github-accent: #58a6ff;
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.05);
+    --glass-shadow: rgba(0, 0, 0, 0.2);
+    --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Kanit", sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, var(--github-dark) 0%, #151b24 100%);
+    color: var(--github-text);
+    min-height: 100vh;
+    overflow-x: hidden;
+    line-height: 1.6;
+    letter-spacing: 0.3px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+    margin-bottom: clamp(0.5rem, 2vh, 1rem);
+    font-size: clamp(1.8rem, 4vh, 2.5rem);
+}
+
+p {
+    color: #8b949e;
+    margin-bottom: clamp(1rem, 3vh, 2rem);
+    line-height: 1.6;
+    font-size: clamp(0.9rem, 2vh, 1.1rem);
+}
+
+a, button {
+    transition: var(--transition-smooth);
+}
+
+a:hover, button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.2);
+}
+
+.glass-effect {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.page-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: calc(80px + clamp(1rem, 3vh, 2rem)) 0 clamp(1rem, 3vh, 2rem); /* Ajustado */
+}
+
+.container {
+    width: min(90%, 1200px);
+    margin: 2rem auto;
+    padding: 2rem;
+    text-align: center;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--card-shadow);
+    animation: fadeIn 0.8s ease-out;
+    transition: var(--transition-smooth);
+}
+
+.loading {
+    animation: shimmer 1.5s infinite linear;
+    background: linear-gradient(90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.03) 50%,
+        rgba(255, 255, 255, 0) 100%);
+    background-size: 200% 100%;
+}
+
+.loading-screen {
+    position: fixed;
+    inset: 0;
+    background: var(--github-dark);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.2s ease;
+}
+
+.loading-screen.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 1rem;
+        border-radius: 20px;
+    }
+
+    h1 {
+        font-size: clamp(1.5rem, 6vw, 2rem);
+    }
+
+    p {
+        font-size: clamp(0.875rem, 4vw, 1rem);
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        width: 85%;
+        padding: 2rem;
+    }
+}
