@@ -2,14 +2,16 @@
     position: relative;
     width: 100%;
     height: auto;
-    margin: clamp(20px, 4vh, 40px) auto;
-    padding: clamp(10px, 2vh, 20px) 60px; /* Add horizontal padding */
+    min-height: 700px;
+    margin: 0 auto;
+    padding: 20px 15px 40px;
     overflow: visible;
 }
 
 .swiper-slide {
-    width: clamp(280px, 40vw, 350px);
+    width: 330px;
     height: auto;
+    margin: 0 auto;
     opacity: 0.4;
     transform: scale(0.8);
     transition: all 0.3s ease;
@@ -47,6 +49,14 @@
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.swiper-pagination {
+    position: absolute;
+    bottom: 0 !important;
+    z-index: 1001; /* Above cards */
+    width: 100%;
+    padding: 10px 0;
+}
+
 .card-item:hover {
     transform: translateY(-8px) scale(1.02);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
@@ -61,6 +71,13 @@
     border: 2px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.4s ease;
+}
+
+.projects-slider {
+    margin-bottom: 4rem;
+    position: relative;
+    /* Add padding to prevent pagination overlap */
+    padding-bottom: 30px;
 }
 
 .card-item:hover .project-img {
@@ -157,6 +174,124 @@
 }
 
 .projects-slider {
-    margin-bottom: 4rem; /* Reduced margin */
     position: relative;
+    width: 100%;
+    padding-bottom: 50px; /* Space for pagination */
+    margin: 2rem auto 4rem;
+    overflow: visible;
+}
+
+/* Large screens (1200px and up) */
+@media screen and (min-width: 1200px) {
+    .swiper-slide {
+        width: 350px;
+    }
+    
+    .card-item {
+        height: 500px;
+    }
+}
+
+/* Tablet (768px to 1199px) */
+@media screen and (min-width: 769px) and (max-width: 1199px) {
+    .swiper-slide {
+        width: 320px;
+    }
+    
+    .card-item {
+        height: 450px;
+    }
+}
+
+/* Mobile (up to 768px) */
+@media screen and (max-width: 768px) {
+    .mySwiper {
+        overflow: hidden;
+        padding: 15px 0 40px;
+        min-height: 500px;
+    }
+
+    .swiper-slide {
+        width: 280px;
+        height: auto;
+    }
+
+    .card-item {
+        height: 400px;
+        padding: 15px;
+    }
+
+    .swiper-slide-prev,
+    .swiper-slide-next {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
+    }
+}
+
+/* Small mobile (up to 480px) */
+@media screen and (max-width: 480px) {
+    .swiper-slide {
+        width: 260px;
+    }
+
+    .card-item {
+        height: 380px;
+        padding: 12px;
+    }
+}
+
+/* Medium screens (510px to 768px) */
+@media screen and (min-width: 510px) and (max-width: 768px) {
+    .mySwiper {
+        min-height: 550px;
+        padding: 15px 0 50px;
+    }
+
+    .swiper-slide {
+        width: 300px;
+    }
+
+    .card-item {
+        height: 420px;
+        padding: 15px;
+    }
+
+    .project-img {
+        height: 150px;
+    }
+
+    .project-name {
+        font-size: 1.3rem;
+    }
+
+    .descripcion {
+        font-size: 0.9rem;
+        margin: 10px 0;
+    }
+
+    .ver-button {
+        padding: 8px 20px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Small mobile adjustments */
+@media screen and (max-width: 509px) {
+    .mySwiper {
+        min-height: 500px;
+    }
+
+    .swiper-slide {
+        width: 260px;
+    }
+
+    .card-item {
+        height: 380px;
+        padding: 12px;
+    }
 }
