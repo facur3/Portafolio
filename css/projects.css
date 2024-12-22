@@ -33,12 +33,14 @@
     position: relative;
     color: var(--github-text);
     width: 100%;
-    min-height: clamp(300px, 50vh, 500px);
+    min-height: 400px;
+    height: auto;
     padding: clamp(15px, 2vh, 30px);
+    padding-bottom: 30px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
     border-radius: 16px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -52,7 +54,7 @@
 .swiper-pagination {
     position: absolute;
     bottom: 0 !important;
-    z-index: 1001; /* Above cards */
+    z-index: 1001;
     width: 100%;
     padding: 10px 0;
 }
@@ -76,13 +78,12 @@
 .projects-slider {
     margin-bottom: 4rem;
     position: relative;
-    /* Add padding to prevent pagination overlap */
     padding-bottom: 30px;
 }
 
 .card-item:hover .project-img {
     transform: scale(1.05);
-  }
+}
 
 .project-name {
     font-size: clamp(1.4rem, 3vh, 1.8rem);
@@ -95,8 +96,9 @@
     font-size: clamp(0.9rem, 2vh, 1.1rem);
     line-height: 1.6;
     color: var(--github-text);
-    margin: clamp(10px, 2vh, 15px) 0 clamp(15px, 3vh, 25px);
+    margin: clamp(10px, 2vh, 15px) 0;
     text-align: center;
+    flex-grow: 1;
 }
 
 .ver-button {
@@ -113,6 +115,8 @@
     transition: all 0.3s ease;
     text-decoration: none;
     display: inline-block;
+    margin-top: auto;
+    margin-bottom: 15px;
 }
 
 .ver-button:hover {
@@ -124,7 +128,7 @@
 
 .swiper-button-next,
 .swiper-button-prev {
-    position: absolute; /* Changed from fixed */
+    position: absolute;
     top: 50%;
     width: clamp(40px, 5vw, 50px) !important;
     height: clamp(40px, 5vw, 50px) !important;
@@ -176,7 +180,7 @@
 .projects-slider {
     position: relative;
     width: 100%;
-    padding-bottom: 50px; /* Space for pagination */
+    padding-bottom: 50px;
     margin: 2rem auto 4rem;
     overflow: visible;
 }
@@ -188,7 +192,7 @@
     }
     
     .card-item {
-        height: 500px;
+        min-height: 500px;
     }
 }
 
@@ -199,7 +203,7 @@
     }
     
     .card-item {
-        height: 450px;
+        min-height: 450px;
     }
 }
 
@@ -217,8 +221,39 @@
     }
 
     .card-item {
-        height: 400px;
+        min-height: 400px;
         padding: 15px;
+        padding-bottom: 30px;
+    }
+
+    .swiper-slide-prev,
+    .swiper-slide-next {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1020px) {
+    .mySwiper {
+        overflow: hidden;
+        padding: 15px 0 40px;
+        min-height: 500px;
+    }
+
+    .swiper-slide {
+        width: 280px;
+        height: auto;
+    }
+
+    .card-item {
+        min-height: 400px;
+        padding: 15px;
+        padding-bottom: 30px;
     }
 
     .swiper-slide-prev,
@@ -240,8 +275,9 @@
     }
 
     .card-item {
-        height: 380px;
+        min-height: 380px;
         padding: 12px;
+        padding-bottom: 30px;
     }
 }
 
@@ -257,8 +293,9 @@
     }
 
     .card-item {
-        height: 420px;
+        min-height: 420px;
         padding: 15px;
+        padding-bottom: 30px;
     }
 
     .project-img {
@@ -291,7 +328,8 @@
     }
 
     .card-item {
-        height: 380px;
+        min-height: 380px;
         padding: 12px;
+        padding-bottom: 30px;
     }
 }
