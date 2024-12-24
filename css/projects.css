@@ -1,11 +1,6 @@
 .mySwiper {
-    position: relative;
-    width: 100%;
-    height: auto;
-    min-height: 700px;
-    margin: 0 auto;
-    padding: 20px 15px 40px;
-    overflow: visible;
+    overflow: visible !important;
+    padding: 50px 0;
 }
 
 .swiper-slide {
@@ -23,9 +18,32 @@
     z-index: 2;
 }
 
+.swiper-wrapper {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.swiper-slide {
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    filter: blur(3px) grayscale(100%);
+    transform: scale(0.8) translateX(0);
+}
+
+.swiper-slide-visible {
+    opacity: 0.4;
+}
+
+.swiper-slide-active {
+    opacity: 1;
+    filter: blur(0) grayscale(0);
+    transform: scale(1);
+    z-index: 2;
+}
+
 .swiper-slide-prev,
 .swiper-slide-next {
     opacity: 0.6;
+    filter: blur(1px) grayscale(50%);
     transform: scale(0.85);
 }
 
@@ -204,6 +222,14 @@
     
     .card-item {
         min-height: 450px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .swiper-slide:not(.swiper-slide-active) {
+        opacity: 0;
+        visibility: hidden;
+        filter: blur(5px) grayscale(100%);
     }
 }
 
