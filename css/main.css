@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Kanit", sans-serif;
+}
+
+
 :root {
     --github-dark: #0d1117;
     --github-text: #c9d1d9;
@@ -9,13 +17,6 @@
     --glass-shadow: rgba(0, 0, 0, 0.2);
     --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Kanit", sans-serif;
 }
 
 body {
