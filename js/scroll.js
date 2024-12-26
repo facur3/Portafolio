@@ -7,7 +7,7 @@ window.addEventListener('scroll', () => {
     if (now - lastScrollTime >= throttleDelay) {
         const scrollProgress = document.querySelector('.scroll-progress');
         if (scrollProgress) {
-            const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+            const winScroll = window.pageYOffset || document.documentElement.scrollTop;
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             const scrolled = (winScroll / height) * 100;
             
