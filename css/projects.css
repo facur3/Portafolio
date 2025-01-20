@@ -10,12 +10,14 @@
     opacity: 0.4;
     transform: scale(0.8);
     transition: all 0.3s ease;
+    pointer-events: none;
 }
 
 .swiper-slide-active {
     opacity: 1;
     transform: scale(1);
     z-index: 2;
+    pointer-events: all;
 }
 
 .swiper-wrapper {
@@ -29,7 +31,7 @@
     opacity: 0.4;
     transform: scale(0.8);
     transition: all 0.3s ease;
-    pointer-events: none; /* Add this */
+    pointer-events: none;
 }
 
 
@@ -41,7 +43,7 @@
     opacity: 1;
     transform: scale(1);
     z-index: 2;
-    pointer-events: all; /* Add this */
+    pointer-events: auto;
 }
 
 .swiper-slide-prev,
@@ -49,6 +51,7 @@
     opacity: 0.6;
     filter: blur(1px) grayscale(50%);
     transform: scale(0.85);
+    pointer-events: none;
 }
 
 .card-item {
@@ -73,7 +76,11 @@
     backdrop-filter: blur(4px);
     transform-origin: center;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    pointer-events: none; /* Add this */
+    pointer-events: auto;
+}
+
+.swiper-slide-active .card-item {
+    pointer-events: all; /* Add this */
 }
 
 .swiper-pagination {
@@ -152,14 +159,14 @@
     transition: all 0.3s ease;
     backface-visibility: hidden;
     will-change: transform;
-    pointer-events: auto; /* Add this */
+    pointer-events: auto;
 }
 
 .ver-button:hover,
 .ver-button:focus {
     background: var(--github-accent);
     color: var(--github-dark);
-    -moz-transform: translateY(-3px); /* Firefox specific */
+    -moz-transform: translateY(-3px);
     transform: translateY(-3px);
     box-shadow: 0 7px 20px rgba(88, 166, 255, 0.3);
 }

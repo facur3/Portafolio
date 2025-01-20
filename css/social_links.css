@@ -25,3 +25,19 @@
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(88, 166, 255, 0.4);
 }
+
+@media screen and (max-width: 480px) {
+    .social-links a {
+        color: var(--github-text) !important;
+        border: 1px solid var(--github-text) !important;
+    }
+}
+
+@media not all and (min-resolution: 0.001dpcm) {
+    @supports (-webkit-appearance: none) {
+        .social-links a {
+            color: var(--github-text) !important;
+            border: 1px solid var(--github-text) !important;
+        }
+    }
+}

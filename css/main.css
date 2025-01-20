@@ -112,6 +112,18 @@ a:hover, button:hover {
     pointer-events: none;
 }
 
+.profile-img {
+    will-change: transform, box-shadow;
+}
+
+.card-item {
+    will-change: transform, box-shadow;
+}
+
+.ver-button {
+    will-change: transform;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;

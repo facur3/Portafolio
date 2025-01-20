@@ -1,22 +1,13 @@
-// Scroll Progress with throttle
-let lastScrollTime = 0;
-const throttleDelay = 10;
+// Scroll Progress with requestAnimationFrame
+const scrollProgress = document.querySelector('.scroll-progress');
 
 window.addEventListener('scroll', () => {
-    const now = Date.now();
-    if (now - lastScrollTime >= throttleDelay) {
-        const scrollProgress = document.querySelector('.scroll-progress');
-        if (scrollProgress) {
-            const winScroll = window.pageYOffset || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            
-            requestAnimationFrame(() => {
-                scrollProgress.style.width = `${scrolled}%`;
-            });
-        }
-        lastScrollTime = now;
-    }
+    requestAnimationFrame(() => {
+        const winScroll = window.pageYOffset || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        scrollProgress.style.width = `${scrolled}%`;
+    });
 });
 
 // Loading Screen with promise

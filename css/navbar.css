@@ -24,7 +24,7 @@
     font-size: 1.5rem;
     font-weight: 700;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: color 0.2s ease;
     z-index: 1001;
     margin-right: auto;
 }
@@ -51,7 +51,7 @@
     width: 25px;
     height: 2px;
     background-color: var(--github-accent) !important;
-    transition: var(--transition-smooth);
+    transition: background-color 0.2s ease;
 }
 
 .hamburger:hover span {
@@ -87,7 +87,7 @@
     font-weight: 500;
     font-size: 1.2rem;
     position: relative;
-    transition: all 0.3s ease;
+    transition: color 0.2s ease;
 }
 
 .nav-links a::after {
@@ -98,7 +98,10 @@
     width: 0;
     height: 2px;
     background: var(--github-accent);
-    transition: width 0.3s ease;
+    transition: width 0.2s ease;
+}
+.nav-links a:hover {
+    color: var(--github-accent);
 }
 
 .nav-links a:hover::after {
