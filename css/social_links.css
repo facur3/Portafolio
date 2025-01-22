@@ -26,10 +26,26 @@
     box-shadow: 0 5px 15px rgba(88, 166, 255, 0.4);
 }
 
+<<<<<<< HEAD
 /* iOS-specific adjustments */
 @supports (-webkit-touch-callout: none) {
     .social-links a {
         color: #c9d1d9; /* Explicit color for iOS */
         backdrop-filter: none; /* Disable backdrop-filter on iOS */
+=======
+@media screen and (max-width: 480px) {
+    .social-links a {
+        color: var(--github-text) !important;
+        border: 1px solid var(--github-text) !important;
+    }
+}
+
+@media not all and (min-resolution: 0.001dpcm) {
+    @supports (-webkit-appearance: none) {
+        .social-links a {
+            color: var(--github-text) !important;
+            border: 1px solid var(--github-text) !important;
+        }
+>>>>>>> c0a49fdf6227a4ed08b7d06b5a9e9b23881bee7e
     }
 }
