@@ -23,12 +23,6 @@
 }
 
 .swiper-slide {
-<<<<<<< HEAD
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    opacity: 0;
-    filter: blur(3px) grayscale(100%);
-    transform: scale(0.8) translateX(0);
-=======
     width: 330px;
     height: auto;
     margin: 0 auto;
@@ -36,7 +30,6 @@
     transform: scale(0.8);
     transition: all 0.3s ease;
     pointer-events: none;
->>>>>>> c0a49fdf6227a4ed08b7d06b5a9e9b23881bee7e
 }
 
 .swiper-slide-visible {
@@ -48,10 +41,7 @@
     filter: blur(0) grayscale(0);
     transform: scale(1);
     z-index: 2;
-<<<<<<< HEAD
-=======
     pointer-events: auto;
->>>>>>> c0a49fdf6227a4ed08b7d06b5a9e9b23881bee7e
 }
 
 .swiper-slide-prev,
@@ -82,14 +72,6 @@
     backdrop-filter: blur(4px);
     transform-origin: center;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-<<<<<<< HEAD
-=======
-    pointer-events: auto;
-}
-
-.swiper-slide-active .card-item {
-    pointer-events: all; /* Add this */
->>>>>>> c0a49fdf6227a4ed08b7d06b5a9e9b23881bee7e
 }
 
 .swiper-pagination {
@@ -183,27 +165,12 @@
     display: inline-block;
     margin-top: auto;
     margin-bottom: 15px;
-<<<<<<< HEAD
-=======
-    z-index: 2;
-    -moz-transform: translateY(0);
-    transform: translateY(0);
-    transition: all 0.3s ease;
-    backface-visibility: hidden;
-    will-change: transform;
-    pointer-events: auto;
->>>>>>> c0a49fdf6227a4ed08b7d06b5a9e9b23881bee7e
 }
 
 .ver-button:hover {
     background: var(--github-accent);
     color: var(--github-dark);
-<<<<<<< HEAD
     transform: translateY(-5px) scale(1.05);
-=======
-    -moz-transform: translateY(-3px);
-    transform: translateY(-3px);
->>>>>>> c0a49fdf6227a4ed08b7d06b5a9e9b23881bee7e
     box-shadow: 0 7px 20px rgba(88, 166, 255, 0.3);
 }
 

@@ -2,7 +2,6 @@
 const scrollProgress = document.querySelector('.scroll-progress');
 
 window.addEventListener('scroll', () => {
-<<<<<<< HEAD
     const now = Date.now();
     if (now - lastScrollTime >= throttleDelay) {
         const scrollProgress = document.querySelector('.scroll-progress');
@@ -17,14 +16,6 @@ window.addEventListener('scroll', () => {
         }
         lastScrollTime = now;
     }
-=======
-    requestAnimationFrame(() => {
-        const winScroll = window.pageYOffset || document.documentElement.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrolled = (winScroll / height) * 100;
-        scrollProgress.style.width = `${scrolled}%`;
-    });
->>>>>>> c0a49fdf6227a4ed08b7d06b5a9e9b23881bee7e
 });
 
 // Loading Screen with promise

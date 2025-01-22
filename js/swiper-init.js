@@ -22,14 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
-<<<<<<< HEAD
-    },
-    touchRatio: 1.5,
-    touchAngle: 45,
-    touchMoveStopPropagation: true,
-    watchSlidesProgress: true,
-    grabCursor: true
-=======
         breakpoints: {
             320: {
                 slidesPerView: 1,
@@ -54,5 +46,4 @@ document.addEventListener('DOMContentLoaded', () => {
         updateOnWindowResize: true,
         resizeObserver: true,
     });
->>>>>>> c0a49fdf6227a4ed08b7d06b5a9e9b23881bee7e
 });
