@@ -3,3 +3,4 @@ import './observer.js';
 import './hamburger.js';
 import './scroll.js';
 import './lenis-init.js';
+import './skill.js';

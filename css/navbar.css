@@ -7,16 +7,15 @@
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--glass-border);
     z-index: 1000;
-    padding: 1rem;
+    padding: 1rem 0;
 }
 
 .nav-container {
-    width: 100%;
-    max-width: 1400px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 1rem;
 }
 
 .nav-logo {
@@ -38,12 +37,10 @@
     flex-direction: column;
     gap: 6px;
     cursor: pointer;
+    z-index: 1001;
     padding: 12px;
     background: transparent;
     border: none;
-    position: relative;
-    z-index: 1002;
-    margin-left: auto;
 }
 
 .hamburger span {
@@ -106,20 +103,6 @@
 }
 
 @media screen and (max-width: 768px) {
-    .nav-links {
-        position: fixed;
-        top: 0;
-        left: 100%; /* Change from right to left */
-        height: 100vh;
-        width: 100%;
-        background: rgba(13, 17, 23, 0.98);
-        transition: left 0.3s ease-in-out; /* Change from right to left */
-    }
-
-    .nav-links.active {
-        left: 0; 
-    }
-
     .hamburger span {
         background-color: var(--github-accent) !important;
     }

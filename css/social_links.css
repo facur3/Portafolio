@@ -6,12 +6,12 @@
 }
 
 .social-links a {
-    color: var(--github-text);
+    color: var(--github-text, #c9d1d9); /* Fallback color */
     text-decoration: none;
     padding: clamp(0.5rem, 1.5vh, 0.8rem) clamp(1rem, 2vw, 1.5rem);
-    border: 1px solid var(--github-text);
+    border: 1px solid var(--github-text, #c9d1d9); /* Fallback color */
     border-radius: 12px;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px); /* Remove if issue persists */
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     align-items: center;
@@ -24,4 +24,12 @@
     color: var(--github-dark);
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(88, 166, 255, 0.4);
+}
+
+/* iOS-specific adjustments */
+@supports (-webkit-touch-callout: none) {
+    .social-links a {
+        color: #c9d1d9; /* Explicit color for iOS */
+        backdrop-filter: none; /* Disable backdrop-filter on iOS */
+    }
 }

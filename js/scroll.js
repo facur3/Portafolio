@@ -7,7 +7,7 @@ window.addEventListener('scroll', () => {
     if (now - lastScrollTime >= throttleDelay) {
         const scrollProgress = document.querySelector('.scroll-progress');
         if (scrollProgress) {
-            const winScroll = window.pageYOffset || document.documentElement.scrollTop;
+            const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             const scrolled = (winScroll / height) * 100;
             
@@ -22,16 +22,17 @@ window.addEventListener('scroll', () => {
 // Loading Screen with promise
 document.addEventListener('DOMContentLoaded', () => {
     const loader = document.querySelector('.loading-screen');
+
     if (loader) {
+        // Simulate a delay (e.g., waiting for resources to load)
         Promise.all([
-            // Add any resource loading promises here
-            new Promise(resolve => setTimeout(resolve, 800))
+            new Promise(resolve => setTimeout(resolve, 1500)) // Adjust the delay as needed
         ]).then(() => {
-            loader.classList.add('hide');
-            setTimeout(() => loader.remove(), 500);
+            loader.classList.add('hide'); // Hide the loading screen
+            setTimeout(() => loader.remove(), 500); // Remove it from the DOM after the transition
         }).catch(error => {
             console.error('Loading error:', error);
-            loader.remove();
+            loader.remove(); // Remove the loader if there's an error
         });
     }
 });

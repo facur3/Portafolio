@@ -1,7 +1,3 @@
-.mySwiper {
-    overflow: visible !important;
-    padding: 50px 0;
-}
 
 .swiper-slide {
     width: 330px;
@@ -19,19 +15,17 @@
 }
 
 .swiper-wrapper {
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: row;
+    width: 100%;
 }
 
 .swiper-slide {
-    width: 330px;
-    height: auto;
-    margin: 0 auto;
-    opacity: 0.4;
-    transform: scale(0.8);
-    transition: all 0.3s ease;
-    pointer-events: none; /* Add this */
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    filter: blur(3px) grayscale(100%);
+    transform: scale(0.8) translateX(0);
 }
-
 
 .swiper-slide-visible {
     opacity: 0.4;
@@ -39,9 +33,9 @@
 
 .swiper-slide-active {
     opacity: 1;
+    filter: blur(0) grayscale(0);
     transform: scale(1);
     z-index: 2;
-    pointer-events: all; /* Add this */
 }
 
 .swiper-slide-prev,
@@ -53,8 +47,6 @@
 
 .card-item {
     position: relative;
-    z-index: 1;
-    isolation: isolate;
     color: var(--github-text);
     width: 100%;
     min-height: 400px;
@@ -73,24 +65,14 @@
     backdrop-filter: blur(4px);
     transform-origin: center;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    pointer-events: none; /* Add this */
 }
 
 .swiper-pagination {
     position: absolute;
-    bottom: 0 !important;
+    bottom: 0;
     z-index: 1001;
     width: 100%;
     padding: 10px 0;
-}
-
-.card-item:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-}
-
-.swiper-slide-active .card-item {
-    pointer-events: all; /* Add this */
 }
 
 .project-img {
@@ -114,11 +96,41 @@
     transform: scale(1.05);
 }
 
+.card-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
 .project-name {
     font-size: clamp(1.4rem, 3vh, 1.8rem);
     font-weight: 600;
     margin-bottom: clamp(10px, 2vh, 15px);
     color: var(--github-accent);
+}
+
+.project-tags {
+    padding-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.tag {
+    padding: 0.25rem 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: var(--github-text);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.tag:hover {
+    background: var(--github-accent);
+    color: var(--github-dark);
+    transform: translateY(-2px);
 }
 
 .descripcion {
@@ -132,9 +144,6 @@
 
 .ver-button {
     position: relative;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
     padding: clamp(8px, 1.5vh, 12px) clamp(25px, 4vw, 35px);
     font-size: clamp(0.9rem, 2vh, 1.1rem);
     font-weight: 500;
@@ -143,39 +152,27 @@
     border: 2px solid var(--github-accent);
     border-radius: 8px;
     cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
     text-decoration: none;
+    display: inline-block;
     margin-top: auto;
     margin-bottom: 15px;
-    z-index: 2;
-    -moz-transform: translateY(0);
-    transform: translateY(0);
-    transition: all 0.3s ease;
-    backface-visibility: hidden;
-    will-change: transform;
-    pointer-events: auto; /* Add this */
 }
 
-.ver-button:hover,
-.ver-button:focus {
+.ver-button:hover {
     background: var(--github-accent);
     color: var(--github-dark);
-    -moz-transform: translateY(-3px); /* Firefox specific */
-    transform: translateY(-3px);
+    transform: translateY(-5px) scale(1.05);
     box-shadow: 0 7px 20px rgba(88, 166, 255, 0.3);
 }
-
-.ver-button:focus-visible {
-    outline: 2px solid var(--github-accent);
-    outline-offset: 2px;
-}
-
 
 .swiper-button-next,
 .swiper-button-prev {
     position: absolute;
     top: 50%;
-    width: clamp(40px, 5vw, 50px) !important;
-    height: clamp(40px, 5vw, 50px) !important;
+    width: clamp(40px, 5vw, 50px);
+    height: clamp(40px, 5vw, 50px);
     color: var(--github-text);
     background: transparent;
     border: 2px solid var(--github-text);
@@ -195,7 +192,7 @@
 
 .swiper-button-next:after,
 .swiper-button-prev:after {
-    font-size: clamp(16px, 2.5vw, 20px) !important;
+    font-size: clamp(16px, 2.5vw, 20px);
 }
 
 .swiper-button-next:hover,
@@ -207,7 +204,7 @@
 }
 
 .swiper-pagination {
-    bottom: clamp(-15px, -2vh, -10px) !important;
+    bottom: clamp(-15px, -2vh, -10px);
 }
 
 .swiper-pagination-bullet {
