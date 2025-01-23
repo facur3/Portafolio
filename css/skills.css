@@ -62,6 +62,12 @@
     font-weight: 600;
 }
 
+@supports (-webkit-touch-callout: none) {
+    .skills-title {
+      -webkit-text-fill-color: #c9d1d9;
+    }
+  }
+
 .skill-item {
     padding: 1.5rem;
     border-radius: 16px;
